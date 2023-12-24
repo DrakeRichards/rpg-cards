@@ -12,7 +12,9 @@
 			"extensions": [
 				"nvarner.typst-lsp",
 				"mgt19937.typst-preview",
-				"CalebFiggers.typst-companion"
+				"CalebFiggers.typst-companion",
+				"ms-python.autopep8",
+				"ms-python.python"
 			]
 		}
 	}
