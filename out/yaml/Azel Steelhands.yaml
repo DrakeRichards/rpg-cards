@@ -1,11 +1,10 @@
-description:
-  looks: Azel is stout and burly. His hands hold the proof of his work, scarred yet
-    strong. His hair and beard are a deep forest brown, knotted into intricate braids
-    filled with small trinkets and dried flowers.
-  overview: Azel is hardworking and diligent. He is highly protective of the gardens
+description: Azel is hardworking and diligent. He is highly protective of the gardens
     and their beauty, disapproving those who don't appreciate nature. His dedication
     to his work often makes him seem gruff and withdrawn.
-  voice: Gravelly, deep and accompanied by a varied range of plant-based jargon.
+looks: Azel is stout and burly. His hands hold the proof of his work, scarred yet
+  strong. His hair and beard are a deep forest brown, knotted into intricate braids
+  filled with small trinkets and dried flowers.
+voice: Gravelly, deep and accompanied by a varied range of plant-based jargon.
 hooks:
   frustration: Struggling to rekindle the growth of a rare silver-leaf fern after
     a rough winter.
@@ -20,3 +19,7 @@ physicalInfo:
   gender: Male
   job: Groundskeeper
   race: Dwarf
+image: 1702931456.jpg
+location: Private Garden
+genderRaceJob: Male Dwarf Groundskeeper
+groupName: Farmers', Grocers', and Growers' Guild

@@ -3,7 +3,7 @@
   height: 5in
 )
 
-#let data = yaml("data.yaml")
+#let data = yaml("../test/item.yaml")
 
 = #data.name
 
