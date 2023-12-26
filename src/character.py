@@ -36,7 +36,11 @@ class Character:
     description: Description | None = None
     personality: Personality | None = None
     hooks: Hooks | None = None
-
+    image: str = ''
+    location: str = ''
+    groupName: str = ''
+    groupTitle: str = ''
+    groupRank: str = ''
 
 def markdown_to_character_yaml(filepath: str) -> str:
     # File contents to string
@@ -73,11 +77,16 @@ def markdown_to_character_yaml(filepath: str) -> str:
         ),
         description=Character.Description(**description_lower_keys),
         personality=Character.Personality(**personality_lower_keys),
-        hooks=Character.Hooks(**hooks_lower_keys)
+        hooks=Character.Hooks(**hooks_lower_keys),
+        image=page.images[0],
+        location=page.frontmatter['location'],
+        groupName=page.dataview_fields['Group Name'][0],
+        groupTitle=page.dataview_fields['Group Title'][0],
+        groupRank=page.dataview_fields['Group Rank'][0]
     )
 
     # Export to a YAML file.
-    outfile: str = f"./out/yaml/{char.name}.yaml"
+    outfile: str = f"./data/{char.name}.yaml"
     with open(outfile, mode="wt", encoding="utf-8") as file:
         yaml.dump(asdict(char), file)
 
