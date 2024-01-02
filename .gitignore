@@ -161,3 +161,4 @@ cython_debug/
 
 # Outfiles
 *.pdf
+.DS_Store
