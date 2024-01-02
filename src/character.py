@@ -1,7 +1,4 @@
 from dataclasses import dataclass, asdict
-from pathlib import Path
-
-import yaml
 
 import obsidian_tools
 
@@ -42,10 +39,18 @@ class Character:
     groupTitle: str = ''
     groupRank: str = ''
 
-def markdown_to_character_yaml(filepath: str) -> str:
-    # File contents to string
-    text = Path(filepath).read_text()
+def parse(text: str) -> dict[str, str]:
+    """Convert a markdown-formatted string into a Character object. Used to export to other programs.
 
+    Args:
+        text (str): 
+
+    Raises:
+        KeyError: _description_
+
+    Returns:
+        str: _description_
+    """
     # Parse string to object
     page = obsidian_tools.Page(text)
 
@@ -85,9 +90,15 @@ def markdown_to_character_yaml(filepath: str) -> str:
         groupRank=page.dataview_fields['Group Rank'][0]
     )
 
-    # Export to a YAML file.
-    outfile: str = f"./data/{char.name}.yaml"
-    with open(outfile, mode="wt", encoding="utf-8") as file:
-        yaml.dump(asdict(char), file)
+    return asdict(char)
 
-    return outfile
+
+"""
+# File contents to string
+text = Path(filepath).read_text()
+
+# Export to a YAML file.
+outfile: str = f"./data/{char.name}.yaml"
+with open(outfile, mode="wt", encoding="utf-8") as file:
+    yaml.dump(asdict(char), file)
+"""
